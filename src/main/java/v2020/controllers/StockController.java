@@ -1,5 +1,8 @@
 package v2020.controllers;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -12,13 +15,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.node.ArrayNode;
-import com.fasterxml.jackson.databind.node.ObjectNode;
 
 import v1999.FixedStock;
 import v1999.ValidatingTransaction;
+import v1999.domain.Product;
 import v1999.domain.Stock;
 import v1999.domain.Transaction;
+import v2020.api.RqPurchase;
+import v2020.api.RsProduct;
 import v2020.transaction.JsonTransaction;
 
 @RestController
@@ -32,25 +36,25 @@ public class StockController {
 	private final Stock stock = new FixedStock();
 
 	@GetMapping("/status")
-	public JsonNode status() {
-		ArrayNode response = mapper.createArrayNode();
+	public List<RsProduct> status() {
 
-		stock.products().forEach(p -> {
-			int amountOf = stock.amountOf(p);
+		List<Product> products = stock.products();
+		List<RsProduct> status = new ArrayList<>(products.size());
 
-			ObjectNode json = mapper.createObjectNode();
+		for (Product p : products) {
+			int amount = stock.amountOf(p);
+			status.add(new RsProduct(p, amount));
+		}
 
-			json.put("product", p.name());
-			json.put("code", p.code());
-			json.put("price", p.price());
-			json.put("stockAmount", amountOf);
-
-			response.add(json);
-		});
-
-		return response;
+		return status;
 	}
 
+	@PostMapping("/purchase2")
+	public ResponseEntity<?> purchase(@RequestBody RqPurchase purchase) {
+		return new ResponseEntity<String>("not yet implemented", HttpStatus.NOT_IMPLEMENTED);
+	}
+
+	@Deprecated
 	@PostMapping("/purchase")
 	public ResponseEntity<?> purchase(@RequestBody JsonNode payload) {
 		Transaction transaction = new ValidatingTransaction(stock.validCodes(), new JsonTransaction(payload));
