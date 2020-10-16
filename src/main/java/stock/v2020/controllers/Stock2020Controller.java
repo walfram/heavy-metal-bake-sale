@@ -1,4 +1,4 @@
-package v2020.controllers;
+package stock.v2020.controllers;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,21 +16,21 @@ import org.springframework.web.bind.annotation.RestController;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import stock.v2020.api.RqPurchase;
+import stock.v2020.api.RsProduct;
+import stock.v2020.transaction.JsonTransaction;
 import v1999.FixedStock;
 import v1999.ValidatingTransaction;
 import v1999.domain.Product;
 import v1999.domain.Stock;
 import v1999.domain.Transaction;
-import v2020.api.RqPurchase;
-import v2020.api.RsProduct;
-import v2020.transaction.JsonTransaction;
 
 @RestController
 @RequestMapping("/api/v2020")
-public class StockController {
+public class Stock2020Controller {
 
 	@SuppressWarnings("unused")
-	private static final Logger logger = LoggerFactory.getLogger(StockController.class);
+	private static final Logger logger = LoggerFactory.getLogger(Stock2020Controller.class);
 
 	private final ObjectMapper mapper = new ObjectMapper();
 	private final Stock stock = new FixedStock();

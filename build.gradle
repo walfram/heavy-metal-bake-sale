@@ -48,7 +48,7 @@ dependencies {
 }
 
 springBoot {
-    mainClassName = 'v2020.BakeSaleApp2020'
+    mainClassName = 'stock.BakeSaleApp'
 }
 
 //jar {

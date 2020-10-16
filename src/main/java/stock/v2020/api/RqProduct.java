@@ -1,4 +1,4 @@
-package v2020.api;
+package stock.v2020.api;
 
 public final class RqProduct {
 
