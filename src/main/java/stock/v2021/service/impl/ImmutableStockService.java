@@ -14,7 +14,6 @@ public class ImmutableStockService implements StockService {
 	private final List<ProductAmount> amounts = new ArrayList<>();
 	
 	public ImmutableStockService() {
-		amounts.add(new ProductAmount());
 	}
 	
 	@Override
