@@ -1,4 +1,4 @@
-package stock.v2021.domain;
+package v2021.domain;
 
 public interface Product {
 
