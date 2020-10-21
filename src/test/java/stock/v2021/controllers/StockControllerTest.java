@@ -17,7 +17,7 @@ import org.testng.annotations.Test;
 
 import io.restassured.RestAssured;
 import io.restassured.parsing.Parser;
-import stock.v2020.api.RsProduct;
+import stock.v2021.domain.dto.RsProduct;
 
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 public class StockControllerTest extends AbstractTestNGSpringContextTests {

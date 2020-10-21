@@ -1,9 +1,14 @@
 package v2021;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.assertNotNull;
+
+import java.util.List;
 
 import org.testng.annotations.Test;
 
+import stock.v2021.domain.Product;
 import stock.v2021.domain.Stock;
 import stock.v2021.domain.impl.Brownie;
 import stock.v2021.domain.impl.CakePop;
@@ -22,6 +27,16 @@ public class StockTest {
 		assertEquals(stock.quantityOf(new CakePop()), 24);
 		assertEquals(stock.quantityOf(new Water()), 30);
 	}
-	
+
+	@Test
+	public void test_products() {
+		Stock stock = new ConstStock();
+
+		List<Product> products = stock.products();
+
+		assertNotNull(products);
+		assertFalse(products.isEmpty());
+		assertEquals(products.size(), 4);
+	}
 
 }

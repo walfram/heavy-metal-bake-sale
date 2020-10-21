@@ -4,9 +4,12 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.stereotype.Component;
+
 import stock.v2021.domain.Product;
 import stock.v2021.domain.Stock;
 
+@Component
 public class ConstStock implements Stock {
 
 	private final Map<String, Integer> quantity = new LinkedHashMap<>();
