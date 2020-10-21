@@ -1,14 +1,15 @@
-package v2021.domain.impl;
+package stock.v2021.domain.impl;
 
-import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
-import v2021.domain.Product;
-import v2021.domain.Stock;
+import stock.v2021.domain.Product;
+import stock.v2021.domain.Stock;
 
 public class ConstStock implements Stock {
 
-	private final Map<String, Integer> quantity = new HashMap<>();
+	private final Map<String, Integer> quantity = new LinkedHashMap<>();
 
 	public ConstStock() {
 		quantity.put(new Brownie().code(), 48);
@@ -30,6 +31,11 @@ public class ConstStock implements Stock {
 
 			return null;
 		});
+	}
+
+	@Override
+	public List<Product> products() {
+		return List.of(new Brownie(), new Muffin(), new CakePop(), new Water());
 	}
 
 }

@@ -3,8 +3,6 @@ package stock.v2020.controllers;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 import stock.v2020.api.RqPurchase;
 import stock.v2020.api.RsProduct;
@@ -29,10 +26,6 @@ import v1999.domain.Transaction;
 @RequestMapping("/api/v2020")
 public class Stock2020Controller {
 
-	@SuppressWarnings("unused")
-	private static final Logger logger = LoggerFactory.getLogger(Stock2020Controller.class);
-
-	private final ObjectMapper mapper = new ObjectMapper();
 	private final Stock stock = new FixedStock();
 
 	@GetMapping("/status")

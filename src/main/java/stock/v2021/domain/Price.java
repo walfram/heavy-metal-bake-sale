@@ -1,4 +1,4 @@
-package v2021.domain;
+package stock.v2021.domain;
 
 import java.util.List;
 

@@ -1,6 +1,6 @@
-package v2021.domain.impl;
+package stock.v2021.domain.impl;
 
-import v2021.domain.ProductImpl;
+import stock.v2021.domain.ProductImpl;
 
 public final class Muffin extends ProductImpl {
 

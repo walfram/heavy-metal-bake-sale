@@ -4,12 +4,12 @@ import static org.testng.Assert.assertEquals;
 
 import org.testng.annotations.Test;
 
-import v2021.domain.Stock;
-import v2021.domain.impl.Brownie;
-import v2021.domain.impl.CakePop;
-import v2021.domain.impl.ConstStock;
-import v2021.domain.impl.Muffin;
-import v2021.domain.impl.Water;
+import stock.v2021.domain.Stock;
+import stock.v2021.domain.impl.Brownie;
+import stock.v2021.domain.impl.CakePop;
+import stock.v2021.domain.impl.ConstStock;
+import stock.v2021.domain.impl.Muffin;
+import stock.v2021.domain.impl.Water;
 
 public class StockTest {
 
