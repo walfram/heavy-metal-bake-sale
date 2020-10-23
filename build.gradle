@@ -35,9 +35,6 @@ dependencies {
     // https://mvnrepository.com/artifact/ch.qos.logback/logback-classic
     implementation 'ch.qos.logback:logback-classic:1.2.3'
 
-    // Use TestNG framework, also requires calling test.useTestNG() below
-    testImplementation 'org.testng:testng:7.0.0'
-    
     implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
@@ -72,9 +69,4 @@ run {
 application {
     // Define the main class for the application.
     mainClassName = 'v1999.Main'
-}
-
-test {
-    // Use TestNG for unit tests
-    useTestNG()
 }

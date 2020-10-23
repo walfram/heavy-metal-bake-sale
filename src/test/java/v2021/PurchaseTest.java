@@ -1,10 +1,10 @@
 package v2021;
 
-import static org.testng.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.List;
 
-import org.testng.annotations.Test;
+import org.junit.jupiter.api.Test;
 
 import stock.v2021.domain.Price;
 import stock.v2021.domain.Product;
