@@ -1,0 +1,17 @@
+{
+	"products": [
+		{
+			"code": "B",
+			"quantity": 5
+		},
+		{
+			"code": "M",
+			"quantity": 5
+		},
+		{
+			"code": "W",
+			"quantity": 10
+		}
+	],
+	"paid": 20.0
+}

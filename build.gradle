@@ -70,3 +70,8 @@ application {
     // Define the main class for the application.
     mainClassName = 'v1999.Main'
 }
+
+
+test {
+	useJUnitPlatform()
+}
