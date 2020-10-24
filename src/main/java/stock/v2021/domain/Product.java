@@ -9,5 +9,7 @@ public interface Product {
 	double price();
 
 	double priceOf(int quantity);
+
+	void remove(int quantity);
 	
 }

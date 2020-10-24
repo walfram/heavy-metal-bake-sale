@@ -37,7 +37,10 @@ public final class ProductsImpl implements Products {
 
 	@Override
 	public void remove(String code, int quantity) {
-
+		if (!hasProduct(code))
+			return;
+		
+		products.get(code).remove(quantity);
 	}
 
 	@Override
@@ -46,6 +49,14 @@ public final class ProductsImpl implements Products {
 				rp -> products.get(rp.code()).priceOf(rp.quantity())).sum();
 
 		return sum;
+	}
+
+	@Override
+	public int quantityOf(String code) {
+		if (!hasProduct(code))
+			return 0;
+
+		return products.get(code).quantity();
 	}
 
 }

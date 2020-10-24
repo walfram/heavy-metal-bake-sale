@@ -12,4 +12,6 @@ public interface Products {
 
 	double price(List<ProductRequest> requestedProducts);
 
+	int quantityOf(String code);
+
 }

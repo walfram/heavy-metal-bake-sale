@@ -29,4 +29,9 @@ public final class StockImpl implements Stock {
 		return purchase.paid() - price;
 	}
 
+	@Override
+	public int quantityOf(String code) {
+		return products.quantityOf(code);
+	}
+
 }

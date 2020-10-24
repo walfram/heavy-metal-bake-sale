@@ -2,6 +2,7 @@ package stock.v2021.domain;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.IOException;
 
@@ -39,7 +40,21 @@ public class StockTest {
 	}
 
 	@Test
-	public void test_make_purchase() throws NotEnoughStockException, NotEnoughMoneyException, ProductNotFoundException {
+	public void test_purchase_reduces_stock_quantity() throws NotEnoughStockException, NotEnoughMoneyException,
+			ProductNotFoundException {
+
+		int before = stock.quantityOf("W");
+
+		stock.purchase(new Purchase(10.0, new ProductRequest("W", 5)));
+
+		int after = stock.quantityOf("W");
+
+		assertTrue(before > after);
+		assertEquals(after + 5, before);
+	}
+
+	@Test
+	public void test_purchase_change() throws NotEnoughStockException, NotEnoughMoneyException, ProductNotFoundException {
 		double change = stock.purchase(
 				new Purchase(5.0, new ProductRequest("B", 1), new ProductRequest("M", 1), new ProductRequest("C", 1),
 						new ProductRequest("W", 1)));

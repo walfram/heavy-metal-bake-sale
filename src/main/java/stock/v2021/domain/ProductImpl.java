@@ -7,7 +7,8 @@ public final class ProductImpl implements Product {
 	private final String code;
 	private final String name;
 	private final double price;
-	private final int quantity;
+
+	private int quantity;
 
 	public ProductImpl(JsonNode json) {
 		this(json.path("code").textValue(), json.path("name").textValue(), json.path("price").doubleValue(), json.path(
@@ -39,6 +40,11 @@ public final class ProductImpl implements Product {
 	@Override
 	public double priceOf(int quantity) {
 		return price * quantity;
+	}
+
+	@Override
+	public void remove(int quantity) {
+		this.quantity -= quantity;
 	}
 
 }
