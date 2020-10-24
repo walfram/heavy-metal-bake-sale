@@ -1,5 +1,6 @@
 package stock.v2021.domain;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.io.IOException;
@@ -35,6 +36,15 @@ public class StockTest {
 	public void beforeEach() {
 		Products products = new ProductsImpl(productsJson);
 		stock = new StockImpl(products);
+	}
+
+	@Test
+	public void test_make_purchase() throws NotEnoughStockException, NotEnoughMoneyException, ProductNotFoundException {
+		double change = stock.purchase(
+				new Purchase(5.0, new ProductRequest("B", 1), new ProductRequest("M", 1), new ProductRequest("C", 1),
+						new ProductRequest("W", 1)));
+
+		assertEquals(0.5, change);
 	}
 
 	@Test
