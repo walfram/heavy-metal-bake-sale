@@ -17,14 +17,14 @@ public final class StockImpl implements Stock {
 
 			if (!products.hasQuantity(req.code(), req.quantity()))
 				throw new NotEnoughStockException(req.code(), req.quantity());
-
-			products.remove(req.code(), req.quantity());
 		}
 
 		double price = products.price(purchase.requestedProducts());
 
 		if (price > purchase.paid())
 			throw new NotEnoughMoneyException(price, purchase.paid());
+
+		purchase.requestedProducts().forEach(req -> products.remove(req.code(), req.quantity()));
 
 		return purchase.paid() - price;
 	}
