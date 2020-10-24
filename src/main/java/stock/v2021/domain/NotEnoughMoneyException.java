@@ -1,6 +1,6 @@
 package stock.v2021.domain;
 
-public class NotEnoughMoneyException extends Exception {
+public final class NotEnoughMoneyException extends Exception {
 
 	public final double price;
 	public final double paid;

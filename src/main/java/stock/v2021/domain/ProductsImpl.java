@@ -7,7 +7,7 @@ import java.util.stream.StreamSupport;
 
 import com.fasterxml.jackson.databind.JsonNode;
 
-public class ProductsImpl implements Products {
+public final class ProductsImpl implements Products {
 
 	private final Map<String, Product> products;
 

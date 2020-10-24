@@ -2,7 +2,7 @@ package stock.v2021.domain;
 
 import com.fasterxml.jackson.databind.JsonNode;
 
-public class ProductImpl implements Product {
+public final class ProductImpl implements Product {
 
 	private final String code;
 	private final String name;

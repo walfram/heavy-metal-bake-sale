@@ -1,6 +1,6 @@
 package stock.v2021.domain;
 
-public class ProductNotFoundException extends Exception {
+public final class ProductNotFoundException extends Exception {
 
 	public final String code;
 

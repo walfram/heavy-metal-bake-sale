@@ -1,6 +1,6 @@
 package stock.v2021.domain;
 
-public class ProductRequest {
+public final class ProductRequest {
 
 	private final String code;
 	private final int quantity;

@@ -1,6 +1,6 @@
 package stock.v2021.domain;
 
-public class NotEnoughStockException extends Exception {
+public final class NotEnoughStockException extends Exception {
 
 	public final String code;
 	public final int quantity;

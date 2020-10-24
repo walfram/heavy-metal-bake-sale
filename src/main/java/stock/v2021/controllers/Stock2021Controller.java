@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/v2021/stock")
-public class Stock2021Controller {
+public final class Stock2021Controller {
 
 	// public Stock2021Controller(Stock stock) {
 	// this.stock = stock;

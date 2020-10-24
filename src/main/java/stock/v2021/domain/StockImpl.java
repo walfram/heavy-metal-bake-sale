@@ -1,6 +1,6 @@
 package stock.v2021.domain;
 
-public class StockImpl implements Stock {
+public final class StockImpl implements Stock {
 
 	private final Products products;
 

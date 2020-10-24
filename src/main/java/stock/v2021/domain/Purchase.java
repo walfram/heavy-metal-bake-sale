@@ -2,7 +2,7 @@ package stock.v2021.domain;
 
 import java.util.List;
 
-public class Purchase {
+public final class Purchase {
 
 	private final double paid;
 	private final List<ProductRequest> requested;
