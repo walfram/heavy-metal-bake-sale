@@ -15,4 +15,12 @@ public final class Item {
 		this.quantity = quantity;
 	}
 
+	public String code() {
+		return code;
+	}
+
+	public int quantity() {
+		return quantity;
+	}
+
 }

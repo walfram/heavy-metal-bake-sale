@@ -15,5 +15,7 @@ public interface Product {
 	
 	@JsonProperty
 	int quantity();
+
+	boolean hasQuantity(int quantity);
 	
 }
