@@ -5,18 +5,22 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public final class Order {
-	
+
 	@JsonProperty
 	private final double payment;
 
 	@JsonProperty
 	private final List<Item> items;
-	
+
 	public Order(double payment, List<Item> items) {
 		this.payment = payment;
 		this.items = items;
 	}
-	
+
+	public Order(double payment, Item... items) {
+		this(payment, List.of(items));
+	}
+
 	public double payment() {
 		return 0;
 	}
@@ -24,5 +28,5 @@ public final class Order {
 	public List<Item> items() {
 		return items;
 	}
-	
+
 }

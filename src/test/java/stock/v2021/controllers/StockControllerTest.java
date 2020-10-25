@@ -12,8 +12,8 @@ import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
 
 import io.restassured.RestAssured;
+import stock.v2021.domain.ConstProduct;
 import stock.v2021.domain.Product;
-import stock.v2021.domain.ProductImpl;
 
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 public class StockControllerTest {
@@ -29,7 +29,7 @@ public class StockControllerTest {
 	@Test
 	public void test_stock_products() {
 		Product[] products = given().log().all().when().get("/api/v2021/stock").then().statusCode(HttpStatus.OK.value())
-				.extract().as(ProductImpl[].class);
+				.extract().as(ConstProduct[].class);
 
 		assertNotNull(products);
 		assertEquals(4, products.length);

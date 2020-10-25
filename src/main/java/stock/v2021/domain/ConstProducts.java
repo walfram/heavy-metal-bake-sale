@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Component;
 
+import stock.v2021.domain.exception.NotEnoughMoneyException;
 import stock.v2021.domain.exception.NotEnoughStockException;
 import stock.v2021.domain.exception.ProductNotFoundException;
 
@@ -27,13 +28,17 @@ public class ConstProducts implements Products {
 		this.products = products.stream().collect(Collectors.toMap(Product::code, p -> p));
 	}
 
+	public ConstProducts(Products source) {
+		this(source.products());
+	}
+
 	@Override
 	public List<Product> products() {
 		return List.copyOf(products.values());
 	}
 
 	@Override
-	public void purchase(Order order) throws ProductNotFoundException, NotEnoughStockException {
+	public double purchase(Order order) throws ProductNotFoundException, NotEnoughStockException, NotEnoughMoneyException {
 		for (Item item : order.items()) {
 			if (!products.containsKey(item.code()))
 				throw new ProductNotFoundException(item.code());
@@ -44,6 +49,24 @@ public class ConstProducts implements Products {
 				throw new NotEnoughStockException(item.code(), item.quantity(), product.quantity());
 		}
 
+		double price = order.items().stream().mapToDouble(item -> products.get(item.code()).priceOf(item.quantity())).sum();
+
+		if (order.payment() < price)
+			throw new NotEnoughMoneyException(price, order.payment());
+
+		for (Item item : order.items()) {
+			products.get(item.code()).removeQuantity(item.quantity());
+		}
+
+		return order.payment() - price;
+	}
+
+	@Override
+	public int quantityOf(String code) {
+		if (!products.containsKey(code))
+			return 0;
+
+		return products.get(code).quantity();
 	}
 
 }

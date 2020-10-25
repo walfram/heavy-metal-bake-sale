@@ -17,5 +17,9 @@ public interface Product {
 	int quantity();
 
 	boolean hasQuantity(int quantity);
+
+	double priceOf(int quantity);
+
+	void removeQuantity(int quantity);
 	
 }
