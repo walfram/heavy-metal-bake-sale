@@ -22,7 +22,7 @@ public final class Order {
 	}
 
 	public double payment() {
-		return 0;
+		return payment;
 	}
 
 	public List<Item> items() {

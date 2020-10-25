@@ -13,7 +13,6 @@ import stock.v2021.domain.exception.ProductNotFoundException;
 @Component
 public class ConstProducts implements Products {
 
-	// private List<Product> products = new ArrayList<>();
 	private final Map<String, Product> products;
 
 	public ConstProducts() {
