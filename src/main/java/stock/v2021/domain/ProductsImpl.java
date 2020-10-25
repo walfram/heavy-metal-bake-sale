@@ -1,15 +1,23 @@
 package stock.v2021.domain;
 
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
+import org.springframework.stereotype.Component;
+
 import com.fasterxml.jackson.databind.JsonNode;
 
+@Component
 public final class ProductsImpl implements Products {
 
 	private final Map<String, Product> products;
+
+	public ProductsImpl() {
+		this.products = new LinkedHashMap<>();
+	}
 
 	public ProductsImpl(JsonNode json) {
 		this(StreamSupport.stream(json.spliterator(), false).map(ProductImpl::new).collect(Collectors.toList()));
@@ -39,7 +47,7 @@ public final class ProductsImpl implements Products {
 	public void remove(String code, int quantity) {
 		if (!hasProduct(code))
 			return;
-		
+
 		products.get(code).remove(quantity);
 	}
 
@@ -57,6 +65,11 @@ public final class ProductsImpl implements Products {
 			return 0;
 
 		return products.get(code).quantity();
+	}
+
+	@Override
+	public List<Product> products() {
+		return List.copyOf(products.values());
 	}
 
 }

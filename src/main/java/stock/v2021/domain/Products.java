@@ -14,4 +14,6 @@ public interface Products {
 
 	int quantityOf(String code);
 
+	List<Product> products();
+
 }

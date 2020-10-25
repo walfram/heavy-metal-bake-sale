@@ -6,11 +6,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.IOException;
 
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestInstance;
-import org.junit.jupiter.api.TestInstance.Lifecycle;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
@@ -19,7 +16,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.io.Resources;
 
 @ExtendWith(SpringExtension.class)
-@TestInstance(Lifecycle.PER_CLASS)
 public class StockTest {
 
 	private final ObjectMapper mapper = new ObjectMapper();
@@ -28,13 +24,9 @@ public class StockTest {
 
 	private Stock stock;
 
-	@BeforeAll
-	public void beforeAll() throws IOException {
-		productsJson = mapper.readTree(Resources.getResource("stock.products.json"));
-	}
-
 	@BeforeEach
-	public void beforeEach() {
+	public void beforeEach() throws IOException {
+		productsJson = mapper.readTree(Resources.getResource("stock.products.json"));
 		Products products = new ProductsImpl(productsJson);
 		stock = new StockImpl(products);
 	}

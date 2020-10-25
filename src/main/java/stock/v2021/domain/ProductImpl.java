@@ -1,11 +1,17 @@
 package stock.v2021.domain;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.JsonNode;
 
 public final class ProductImpl implements Product {
 
+	@JsonProperty
 	private final String code;
+	
+	@JsonProperty
 	private final String name;
+	
+	@JsonProperty
 	private final double price;
 
 	private int quantity;

@@ -1,5 +1,10 @@
 package stock.v2021.domain;
 
+import java.util.List;
+
+import org.springframework.stereotype.Component;
+
+@Component
 public final class StockImpl implements Stock {
 
 	private final Products products;
@@ -32,6 +37,11 @@ public final class StockImpl implements Stock {
 	@Override
 	public int quantityOf(String code) {
 		return products.quantityOf(code);
+	}
+
+	@Override
+	public List<Product> products() {
+		return products.products();
 	}
 
 }
