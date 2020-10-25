@@ -2,18 +2,13 @@ package stock.v2021.domain;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public interface Products {
 
-	boolean hasProduct(String code);
-	
-	boolean hasQuantity(String code, int quantity);
-
-	void remove(String code, int quantity);
-
-	double price(List<ProductRequest> requestedProducts);
-
-	int quantityOf(String code);
-
+	@JsonProperty
 	List<Product> products();
+
+	void purchase(Order order);
 
 }

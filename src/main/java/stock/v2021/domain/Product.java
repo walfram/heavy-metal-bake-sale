@@ -1,15 +1,19 @@
 package stock.v2021.domain;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public interface Product {
 
+	@JsonProperty
+	String name();
+	
+	@JsonProperty
 	String code();
-
-	int quantity();
-
+	
+	@JsonProperty
 	double price();
-
-	double priceOf(int quantity);
-
-	void remove(int quantity);
+	
+	@JsonProperty
+	int quantity();
 	
 }

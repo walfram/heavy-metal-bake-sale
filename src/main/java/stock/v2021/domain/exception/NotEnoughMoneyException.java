@@ -1,4 +1,4 @@
-package stock.v2021.domain;
+package stock.v2021.domain.exception;
 
 public final class NotEnoughMoneyException extends Exception {
 

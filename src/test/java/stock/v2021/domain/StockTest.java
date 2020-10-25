@@ -15,6 +15,10 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.io.Resources;
 
+import stock.v2021.domain.exception.NotEnoughMoneyException;
+import stock.v2021.domain.exception.NotEnoughStockException;
+import stock.v2021.domain.exception.ProductNotFoundException;
+
 @ExtendWith(SpringExtension.class)
 public class StockTest {
 
