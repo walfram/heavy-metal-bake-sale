@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public final class Order {
@@ -14,6 +15,7 @@ public final class Order {
 	@JsonProperty
 	private final List<Item> items;
 
+	@JsonCreator
 	public Order(double payment, List<Item> items) {
 		this.payment = payment;
 		this.items = items;

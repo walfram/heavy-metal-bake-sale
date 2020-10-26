@@ -18,7 +18,7 @@ import stock.v2020.domain.exception.NotEnoughStockException;
 import stock.v2020.domain.exception.ProductNotFoundException;
 
 @RestController
-@RequestMapping("/api/v2021/stock")
+@RequestMapping("/api/v2020/stock")
 public final class StockController {
 
 	private final Products products;

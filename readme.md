@@ -4,15 +4,4 @@ gradle run --console=plain
 #### run web app (2020 ver)
 gradle bootrun
 
-`POST localhost:8080/api/v2020/purchase`
-
-request example
-
-```
-{
-	"transaction" : "b, c, w",
-	"payment" : 5.0
-}
-```
-
-`GET localhost:8080/api/v2020/status`
+use `http://localhost:8080/swagger-ui/` 

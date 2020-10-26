@@ -1,5 +1,6 @@
 package stock.v2020.domain;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.common.base.MoreObjects;
 
@@ -11,6 +12,7 @@ public final class Item {
 	@JsonProperty
 	private final int quantity;
 
+	@JsonCreator
 	public Item(String code, int quantity) {
 		this.code = code;
 		this.quantity = quantity;
