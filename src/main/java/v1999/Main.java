@@ -25,6 +25,7 @@ public class Main {
 	private void run() {
 		try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
 			while (true) {
+				System.out.println("********************************");
 				System.out.println("Welcome to Heavy Metal Bake Sale");
 				System.out.println("Here is what we have in stock");
 

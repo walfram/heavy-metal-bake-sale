@@ -26,7 +26,7 @@ public final class ParsedOrder {
 		Map<String, Integer> codes = new LinkedHashMap<>();
 
 		for (String s : splitted) {
-			s.chars().mapToObj(c -> String.valueOf((char) c)).forEach(e -> {
+			s.chars().mapToObj(c -> String.valueOf((char) c).toUpperCase()).forEach(e -> {
 				codes.compute(e, (String key, Integer val) -> {
 					return val == null ? 1 : val + 1;
 				});
