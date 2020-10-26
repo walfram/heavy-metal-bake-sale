@@ -71,7 +71,6 @@ application {
     mainClassName = 'v1999.Main'
 }
 
-
 test {
 	useJUnitPlatform()
 }

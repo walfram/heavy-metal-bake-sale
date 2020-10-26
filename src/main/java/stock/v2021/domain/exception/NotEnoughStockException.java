@@ -3,12 +3,12 @@ package stock.v2021.domain.exception;
 public final class NotEnoughStockException extends Exception {
 
 	public final String code;
-	public final int quantity;
+	public final int requested;
 	public final int available;
 
 	public NotEnoughStockException(String code, int requested, int available) {
 		this.code = code;
-		this.quantity = requested;
+		this.requested = requested;
 		this.available = available;
 	}
 
