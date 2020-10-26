@@ -33,7 +33,7 @@ public final class StockController {
 	}
 
 	@PostMapping
-	public ResponseEntity<?> purchase(@RequestBody Order order) {
+	public ResponseEntity<?> order(@RequestBody Order order) {
 		try {
 			double change = products.purchase(order);
 			return new ResponseEntity<>(change, HttpStatus.ACCEPTED);
@@ -45,14 +45,5 @@ public final class StockController {
 			return new ResponseEntity<>("not enough payment", HttpStatus.PRECONDITION_FAILED);
 		}
 	}
-
-	// @GetMapping
-	// public List<Product> status() {
-	// return stock.products().stream().map(RsProduct::new).collect(Collectors.toList());
-	// }
-
-	// @PostMapping
-	// public void purchase(@RequestBody List<ProductAmount> request) {
-	// }
 
 }
