@@ -33,4 +33,9 @@ public class JsonProducts implements Products {
 		throw new UnsupportedOperationException();
 	}
 
+	@Override
+	public double priceOf(Order order) {
+		throw new UnsupportedOperationException();
+	}
+
 }

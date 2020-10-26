@@ -17,4 +17,6 @@ public interface Products {
 
 	int quantityOf(String code);
 
+	double priceOf(Order order);
+
 }

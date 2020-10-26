@@ -1,6 +1,8 @@
 package stock.v2021.domain;
 
 import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -27,6 +29,10 @@ public final class Order {
 
 	public List<Item> items() {
 		return items;
+	}
+
+	public Optional<Item> item(String code) {
+		return items.stream().filter(item -> Objects.equals(code, item.code())).findFirst();
 	}
 
 }

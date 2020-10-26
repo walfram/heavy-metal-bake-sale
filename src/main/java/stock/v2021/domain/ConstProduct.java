@@ -53,8 +53,8 @@ public final class ConstProduct implements Product {
 	}
 
 	@Override
-	public void removeQuantity(int quantity) {
-		this.quantity -= quantity;
+	public void removeQuantity(int remove) {
+		quantity -= remove;
 	}
 
 }

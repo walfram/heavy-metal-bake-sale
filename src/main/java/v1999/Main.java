@@ -3,6 +3,7 @@ package v1999;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.stream.Collectors;
 
 import stock.v2021.domain.ConstProducts;
 import stock.v2021.domain.Order;
@@ -33,16 +34,21 @@ public class Main {
 				}
 
 				System.out.print("Items to Purchase: ");
-
 				String items = reader.readLine();
 
-				Order order = new ParseOrder(items).order();
+				System.out.print("Your payment: ");
+				double payment = Double.valueOf(reader.readLine());
 
-				System.out.println(String.format("ordered items: %s", order));
+				Order order = new ParsedOrder(items, payment).order();
+				String ordered = order.items().stream().map(i -> String.format("%s:%s", i.code(), i.quantity())).collect(
+						Collectors.joining(", "));
+				System.out.println(String.format("ordered items: %s", ordered));
+				
+				double price = products.priceOf(order);
+				System.out.println(String.format("Price: %.02f", price));
 
 				try {
 					double change = products.purchase(order);
-					System.out.println(String.format("Payment: %.02f", order.payment()));
 					System.out.println(String.format("Change: %.02f", change));
 				} catch (ProductNotFoundException e) {
 					System.out.println(String.format("Product not found in stock = %s", e.code));

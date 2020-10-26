@@ -68,4 +68,10 @@ public class ConstProducts implements Products {
 		return products.get(code).quantity();
 	}
 
+	@Override
+	public double priceOf(Order order) {
+		return order.items().stream().filter(item -> products.containsKey(item.code())).mapToDouble(
+				item -> products.get(item.code()).priceOf(item.quantity())).sum();
+	}
+
 }
