@@ -15,11 +15,6 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.io.Resources;
 
-import stock.v2020.domain.ConstProducts;
-import stock.v2020.domain.Item;
-import stock.v2020.domain.JsonProducts;
-import stock.v2020.domain.Order;
-import stock.v2020.domain.Products;
 import stock.v2020.domain.exception.NotEnoughMoneyException;
 import stock.v2020.domain.exception.NotEnoughStockException;
 import stock.v2020.domain.exception.ProductNotFoundException;
