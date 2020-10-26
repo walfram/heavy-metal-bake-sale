@@ -1,4 +1,4 @@
-package stock.v2021.domain;
+package stock.v2020.domain;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.common.base.MoreObjects;

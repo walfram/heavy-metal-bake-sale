@@ -1,4 +1,4 @@
-package stock.v2021.domain;
+package stock.v2020.domain;
 
 import java.util.List;
 import java.util.Objects;

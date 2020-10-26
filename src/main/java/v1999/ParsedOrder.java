@@ -7,8 +7,8 @@ import java.util.stream.Collectors;
 
 import com.google.common.base.Splitter;
 
-import stock.v2021.domain.Item;
-import stock.v2021.domain.Order;
+import stock.v2020.domain.Item;
+import stock.v2020.domain.Order;
 
 public final class ParsedOrder {
 

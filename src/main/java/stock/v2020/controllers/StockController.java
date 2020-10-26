@@ -1,4 +1,4 @@
-package stock.v2021.controllers;
+package stock.v2020.controllers;
 
 import java.util.List;
 
@@ -10,12 +10,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import stock.v2021.domain.Order;
-import stock.v2021.domain.Product;
-import stock.v2021.domain.Products;
-import stock.v2021.domain.exception.NotEnoughMoneyException;
-import stock.v2021.domain.exception.NotEnoughStockException;
-import stock.v2021.domain.exception.ProductNotFoundException;
+import stock.v2020.domain.Order;
+import stock.v2020.domain.Product;
+import stock.v2020.domain.Products;
+import stock.v2020.domain.exception.NotEnoughMoneyException;
+import stock.v2020.domain.exception.NotEnoughStockException;
+import stock.v2020.domain.exception.ProductNotFoundException;
 
 @RestController
 @RequestMapping("/api/v2021/stock")

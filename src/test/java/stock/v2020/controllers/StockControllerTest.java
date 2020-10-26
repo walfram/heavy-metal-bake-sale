@@ -1,4 +1,4 @@
-package stock.v2021.controllers;
+package stock.v2020.controllers;
 
 import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -12,8 +12,8 @@ import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
 
 import io.restassured.RestAssured;
-import stock.v2021.domain.ConstProduct;
-import stock.v2021.domain.Product;
+import stock.v2020.domain.ConstProduct;
+import stock.v2020.domain.Product;
 
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 public class StockControllerTest {

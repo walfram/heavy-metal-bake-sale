@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
-import stock.v2021.domain.Order;
+import stock.v2020.domain.Order;
 
 public class ParsedOrderTest {
 

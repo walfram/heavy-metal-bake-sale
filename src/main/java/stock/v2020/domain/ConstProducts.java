@@ -1,4 +1,4 @@
-package stock.v2021.domain;
+package stock.v2020.domain;
 
 import java.util.List;
 import java.util.Map;
@@ -6,9 +6,9 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Component;
 
-import stock.v2021.domain.exception.NotEnoughMoneyException;
-import stock.v2021.domain.exception.NotEnoughStockException;
-import stock.v2021.domain.exception.ProductNotFoundException;
+import stock.v2020.domain.exception.NotEnoughMoneyException;
+import stock.v2020.domain.exception.NotEnoughStockException;
+import stock.v2020.domain.exception.ProductNotFoundException;
 
 @Component
 public class ConstProducts implements Products {

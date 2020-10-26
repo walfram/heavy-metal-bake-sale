@@ -1,4 +1,4 @@
-package stock.v2021.domain;
+package stock.v2020.domain;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -15,9 +15,14 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.io.Resources;
 
-import stock.v2021.domain.exception.NotEnoughMoneyException;
-import stock.v2021.domain.exception.NotEnoughStockException;
-import stock.v2021.domain.exception.ProductNotFoundException;
+import stock.v2020.domain.ConstProducts;
+import stock.v2020.domain.Item;
+import stock.v2020.domain.JsonProducts;
+import stock.v2020.domain.Order;
+import stock.v2020.domain.Products;
+import stock.v2020.domain.exception.NotEnoughMoneyException;
+import stock.v2020.domain.exception.NotEnoughStockException;
+import stock.v2020.domain.exception.ProductNotFoundException;
 
 @ExtendWith(SpringExtension.class)
 public class ProductsTest {

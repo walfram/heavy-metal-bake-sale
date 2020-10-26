@@ -5,13 +5,13 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.stream.Collectors;
 
-import stock.v2021.domain.ConstProducts;
-import stock.v2021.domain.Order;
-import stock.v2021.domain.Product;
-import stock.v2021.domain.Products;
-import stock.v2021.domain.exception.NotEnoughMoneyException;
-import stock.v2021.domain.exception.NotEnoughStockException;
-import stock.v2021.domain.exception.ProductNotFoundException;
+import stock.v2020.domain.ConstProducts;
+import stock.v2020.domain.Order;
+import stock.v2020.domain.Product;
+import stock.v2020.domain.Products;
+import stock.v2020.domain.exception.NotEnoughMoneyException;
+import stock.v2020.domain.exception.NotEnoughStockException;
+import stock.v2020.domain.exception.ProductNotFoundException;
 
 public class Main {
 
